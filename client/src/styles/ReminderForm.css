@@ -1,0 +1,84 @@
+.reminder-form {
+    padding: 20px;
+    font-family: 'Circe', sans-serif;
+}
+
+.reminder-form .form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.reminder-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+    font-family: 'Circe', sans-serif;
+}
+
+.reminder-form input,
+.reminder-form select,
+.reminder-form textarea {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: 'Circe', sans-serif;
+    background-color: #fff;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.reminder-form select {
+    padding: 10px 15px;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px 16px;
+    cursor: pointer;
+}
+
+.reminder-form select:not(.filter-selected):not(:focus) {
+    color: transparent;
+}
+
+.reminder-form select:not(.filter-selected):focus {
+    color: #666;
+}
+
+/* Удалено использование data-label, теперь используются плавающие метки */
+
+.reminder-form input:focus,
+.reminder-form select:focus,
+.reminder-form textarea:focus {
+    outline: none;
+    border-color: #014baa;
+    box-shadow: 0 0 0 3px rgba(1, 75, 170, 0.1);
+}
+
+.reminder-form select:hover {
+    border-color: #014baa;
+    box-shadow: 0 2px 8px rgba(1, 75, 170, 0.1);
+}
+
+.reminder-form select.filter-selected {
+    background-color: #fff !important;
+    color: #000;
+    border-color: #014baa;
+}
+
+.reminder-form select.filter-selected:hover {
+    border-color: #013a8a;
+}
+
+.reminder-form select.filter-selected option {
+    color: #333;
+}
+
+.reminder-form .form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 30px;
+}

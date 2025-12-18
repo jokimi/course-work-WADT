@@ -1,0 +1,115 @@
+.pet-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.pet-card:hover {
+    transform: translateY(-2px);
+}
+
+.pet-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.pet-avatar {
+    flex-shrink: 0;
+}
+
+.pet-avatar img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #014baa;
+}
+
+.pet-avatar .avatar-placeholder {
+    width: 60px;
+    height: 60px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #999;
+}
+
+.pet-info-header {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pet-info-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 1.4rem;
+}
+
+.pet-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-icon:hover {
+    background-color: #f5f5f5;
+}
+
+.pet-info {
+    margin-bottom: 15px;
+}
+
+.pet-info div {
+    margin-bottom: 8px;
+    color: #666;
+}
+
+.pet-health {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.pet-health p {
+    margin: 5px 0 0 0;
+    color: #555;
+}
+
+.pet-care {
+    margin-bottom: 15px;
+}
+
+.care-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.pet-footer {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}

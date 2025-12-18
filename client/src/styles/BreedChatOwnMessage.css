@@ -1,0 +1,101 @@
+/* Стили для собственных сообщений в чате */
+
+.breed-chat-message.own-message {
+    flex-direction: row-reverse;
+}
+
+.breed-chat-message.own-message .message-content {
+    background: #014baa;
+    color: white;
+}
+
+
+.breed-chat-message.own-message .message-author {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.breed-chat-message.own-message .message-time {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.breed-chat-message.own-message .message-text {
+    color: white;
+}
+
+.breed-chat-message.own-message .message-reactions {
+    border-top-color: rgba(255, 255, 255, 0.2);
+    padding-top: 0;
+}
+
+.breed-chat-message.own-message .message-menu-btn {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.breed-chat-message.own-message .message-menu-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.breed-chat-message.own-message .message-menu-dropdown {
+    right: 0;
+}
+
+.breed-chat-message.own-message .message-action-btn {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.breed-chat-message.own-message .message-action-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.breed-chat-message.own-message .message-action-btn.edit-btn:hover {
+    color: white;
+}
+
+.breed-chat-message.own-message .message-action-btn.delete-btn:hover {
+    color: #ff6b6b;
+}
+
+.breed-chat-message.own-message .message-action-btn.save-btn {
+    color: #81c784;
+}
+
+.breed-chat-message.own-message .message-action-btn.cancel-btn {
+    color: #ff6b6b;
+}
+
+.breed-chat-message.own-message .message-edit-input {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.breed-chat-message.own-message .message-edit-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.breed-chat-message.own-message .reaction-icon {
+    filter: brightness(0) invert(1);
+}
+
+.breed-chat-message.own-message .reaction-emoji {
+    background: white;
+    border-radius: 50%;
+}
+
+.breed-chat-message.own-message .reaction-image {
+    background: white;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.breed-chat-message.own-message .reaction-count {
+    color: white;
+    background-color: transparent;
+}
+
+.breed-chat-message.own-message .reaction-button-with-count {
+    background: transparent;
+}
+

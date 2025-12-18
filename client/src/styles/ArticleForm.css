@@ -1,0 +1,216 @@
+.article-form-modal {
+    max-width: 700px;
+    width: 95%;
+}
+
+.article-form {
+    padding: 20px;
+}
+
+.article-form .form-group {
+    margin-bottom: 20px;
+}
+
+.article-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+.article-form input,
+.article-form select,
+.article-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.article-form input:focus,
+.article-form select:focus,
+.article-form textarea:focus {
+    outline: none;
+    border-color: #014baa;
+}
+
+.article-form textarea {
+    resize: vertical;
+    min-height: 200px;
+}
+
+.article-form .form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+/* Avatar Upload Styles (same as PetForm) */
+.article-form .avatar-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.article-form .avatar-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    border: none !important;
+    border-radius: 10px;
+}
+
+.article-form .avatar-preview.full-size {
+    min-height: 300px;
+}
+
+.article-form .avatar-image {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.article-form .avatar-image.full-size {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+}
+
+.article-form .avatar-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: none;
+}
+
+.article-form .remove-avatar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.article-form .avatar-placeholder {
+    text-align: center;
+    color: #666;
+    background: #f9f9f9;
+}
+
+.article-form .avatar-placeholder span {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.article-form .avatar-placeholder p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.categories-label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 500;
+    color: #333;
+    font-size: 1rem;
+}
+
+.categories-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.categories-checkbox-group .checkbox-label-styled {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    user-select: none;
+    padding: 0 !important;
+    margin: 0 !important;
+    transition: color 0.2s ease;
+}
+
+.categories-checkbox-group .checkbox-label-styled input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.categories-checkbox-group .checkbox-custom {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    min-height: 22px;
+    border: 2px solid #d0d7de;
+    border-radius: 6px;
+    position: relative;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #fff;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.categories-checkbox-group .checkbox-label-styled input[type="checkbox"]:checked + .checkbox-custom {
+    background-color: #014baa;
+    border-color: #014baa;
+    box-shadow: 0 2px 4px rgba(1, 75, 170, 0.2);
+}
+
+.categories-checkbox-group .checkbox-label-styled input[type="checkbox"]:checked + .checkbox-custom::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) translate(-1px, -1px);
+    top: 3px;
+    left: 6px;
+}
+
+.categories-checkbox-group .checkbox-label-styled:hover .checkbox-custom {
+    border-color: #014baa;
+    box-shadow: 0 0 0 4px rgba(1, 75, 170, 0.08);
+    transform: scale(1.05);
+}
+
+.categories-checkbox-group .checkbox-label-styled:active .checkbox-custom {
+    transform: scale(0.95);
+}
+
+.categories-checkbox-group .checkbox-label-styled:focus-within .checkbox-custom {
+    border-color: #014baa;
+    box-shadow: 0 0 0 4px rgba(1, 75, 170, 0.12);
+    outline: none;
+}

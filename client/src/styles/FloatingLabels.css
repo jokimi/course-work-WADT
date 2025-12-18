@@ -1,0 +1,81 @@
+/* Floating Labels - Google Material Design style */
+.floating-label-group {
+    position: relative;
+}
+
+.floating-label-group input,
+.floating-label-group textarea,
+.floating-label-group select {
+    padding-top: 20px;
+    padding-bottom: 8px;
+}
+
+.floating-label-group label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #666 !important;
+    font-size: 0.95rem;
+    font-family: 'Circe', sans-serif;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    padding: 0 4px;
+    margin: 0;
+    z-index: 1;
+    white-space: nowrap;
+    opacity: 1;
+    display: block !important;
+}
+
+.floating-label-group textarea + label {
+    top: 20px;
+    transform: none;
+}
+
+/* Label поднимается при фокусе или наличии значения */
+.floating-label-group input:focus + label,
+.floating-label-group input:not(:placeholder-shown) + label,
+.floating-label-group textarea:focus + label,
+.floating-label-group textarea:not(:placeholder-shown) + label,
+.floating-label-group select:focus + label,
+.floating-label-group select:not([value=""]) + label,
+.floating-label-group select.filter-selected + label,
+.floating-label-group select.filter-selected-photo + label,
+.floating-label-group.has-value label {
+    top: 0;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    color: #014baa;
+    background-color: #fff;
+}
+
+.floating-label-group input:focus,
+.floating-label-group textarea:focus,
+.floating-label-group select:focus {
+    border-color: #014baa;
+    box-shadow: 0 0 0 3px rgba(1, 75, 170, 0.1);
+}
+
+/* Для date и time полей */
+.floating-label-group input[type="date"]:not([value=""]) + label,
+.floating-label-group input[type="time"]:not([value=""]) + label,
+.floating-label-group input[type="date"]:focus + label,
+.floating-label-group input[type="time"]:focus + label {
+    top: 0;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    color: #014baa;
+}
+
+/* Для number и text полей с value */
+.floating-label-group input[type="number"]:not([value=""]) + label,
+.floating-label-group input[type="text"]:not([value=""]) + label,
+.floating-label-group input[type="url"]:not([value=""]) + label {
+    top: 0;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    color: #014baa;
+}
+

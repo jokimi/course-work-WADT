@@ -1,0 +1,577 @@
+.breed-reviews {
+    padding: 20px 0;
+}
+
+.breed-reviews-loading {
+    padding: 40px;
+    text-align: center;
+    color: #666;
+}
+
+.review-form {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-input {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: 'Circe', sans-serif;
+    resize: vertical;
+    outline: none;
+    margin-bottom: 12px;
+    transition: border-color 0.3s ease;
+}
+
+.review-input:focus {
+    border-color: #014baa;
+}
+
+.review-form-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.attach-photos-btn {
+    padding: 8px 16px;
+    background: #014baa;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    font-family: 'Circe', sans-serif;
+}
+
+.attach-photos-btn:hover {
+    background: #fff;
+    color: black;
+}
+
+.review-photos-preview {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.photo-preview {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.photo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-preview button {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit-review-btn {
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #014baa 0%, #013a8a 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: auto;
+}
+
+.submit-review-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(1, 75, 170, 0.3);
+}
+
+.submit-review-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.review-login-prompt {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    background: #fafafa;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.reviews-empty {
+    padding: 40px;
+    text-align: center;
+    color: #666;
+    background: #fafafa;
+    border-radius: 12px;
+}
+
+.review-item {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-header {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-author-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.review-actions-wrapper {
+    position: relative;
+}
+
+.review-menu-btn {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+.review-menu-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #333;
+}
+
+.review-menu-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    min-width: 150px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.review-menu-item {
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #333;
+    transition: background 0.2s ease;
+    font-family: 'Circe', sans-serif;
+}
+
+.review-menu-item:hover {
+    background: #f5f5f5;
+}
+
+.review-menu-item:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.review-menu-item:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.review-edit-input {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px;
+    border: 2px solid #014baa;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: 'Circe', sans-serif;
+    resize: vertical;
+    outline: none;
+    margin-bottom: 12px;
+}
+
+.review-avatar {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.review-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.review-avatar .avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #014baa 0%, #013a8a 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.review-author-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.review-author {
+    font-weight: 600;
+    color: #014baa;
+    font-size: 0.95rem;
+}
+
+.review-time {
+    font-size: 0.75rem;
+    color: #999;
+}
+
+.review-text {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    word-wrap: break-word;
+}
+
+.review-photos {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.review-photos img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.review-photos img:hover {
+    transform: scale(1.05);
+}
+
+.review-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.review-reactions-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex: 1;
+}
+
+.review-reactions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.reaction-button-with-count {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.85rem;
+    height: 28px;
+}
+
+.reaction-button-with-count:hover {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+.reaction-image {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    border-radius: 50%;
+    background: white;
+    padding: 2px;
+}
+
+.reaction-emoji {
+    font-size: 1.1rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border-radius: 50%;
+}
+
+.reaction-count {
+    font-weight: 600;
+    color: #014baa;
+    font-size: 0.8rem;
+}
+
+.review-reaction-controls {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.add-reaction-btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 50%;
+    height: 28px;
+    width: 28px;
+}
+
+.add-reaction-btn-icon:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.reaction-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.review-time-footer {
+    color: #999;
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+.reaction-picker {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    margin-bottom: 8px;
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    width: 242px !important;
+}
+
+.reaction-picker-section {
+    margin-bottom: 12px;
+}
+
+.reaction-picker-section:last-child {
+    margin-bottom: 0;
+}
+
+.reaction-picker-section label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.reaction-picker-section input[type="text"] {
+    width: 100%;
+    padding: 8px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.reaction-picker-section input[type="text"]:focus {
+    outline: none;
+    border-color: #014baa;
+}
+
+.reaction-picker-section button {
+    padding: 6px 12px;
+    background: #014baa;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.reaction-picker-section button:hover:not(:disabled) {
+    background: #013a8a;
+    transform: translateY(-1px);
+}
+
+.reaction-picker-section button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.reaction-picker-divider {
+    text-align: center;
+    margin: 12px 0;
+    color: #999;
+    font-size: 0.8rem;
+    position: relative;
+}
+
+.reaction-picker-divider::before,
+.reaction-picker-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: #e0e0e0;
+}
+
+.reaction-picker-divider::before {
+    left: 0;
+}
+
+.reaction-picker-divider::after {
+    right: 0;
+}
+
+.quick-reactions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.quick-reaction-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: all 0.2s ease;
+}
+
+.quick-reaction-btn:hover {
+    background: #014baa;
+    border-color: #014baa;
+    transform: scale(1.1);
+}
+
+.review-image-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.review-image-modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.review-image-modal-content img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.review-image-modal-close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .review-photos img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .reaction-picker {
+        min-width: 240px;
+        left: auto;
+        right: 0;
+    }
+}
+

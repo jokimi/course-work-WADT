@@ -1,0 +1,36 @@
+/* Стили для сообщений других пользователей в чате */
+
+.breed-chat-message.other-message .message-content {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.breed-chat-message:not(.own-message) .message-menu-btn {
+    color: #666;
+}
+
+.breed-chat-message:not(.own-message) .message-menu-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #333;
+}
+
+.breed-chat-message.other-message .reaction-emoji {
+    background: white;
+    border-radius: 50%;
+}
+
+.breed-chat-message.other-message .reaction-image {
+    background: white;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.breed-chat-message.other-message .reaction-count {
+    color: #014baa;
+    background-color: transparent;
+}
+
+.breed-chat-message.other-message .reaction-button-with-count {
+    background: transparent;
+}
+

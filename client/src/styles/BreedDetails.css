@@ -1,0 +1,571 @@
+.breed-details {
+    padding: 40px 0;
+}
+
+.breadcrumb {
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.breadcrumb a {
+    color: #014baa;
+    text-decoration: none;
+}
+
+.breadcrumb span {
+    margin: 0 5px;
+    background: transparent !important;
+}
+
+.breadcrumb span:last-child {
+    margin: 0;
+    padding: 0;
+}
+
+.breed-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+    align-items: start;
+}
+
+.breed-image-wrapper {
+    flex-shrink: 0;
+}
+
+.breed-image {
+    position: relative;
+    width: 450px !important;
+    height: 450px !important;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.breed-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hypoallergenic-badge {
+    position: absolute;
+    bottom: 20px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 8px 0 8px 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    height: 32px;
+}
+
+.hypoallergenic-text {
+    font-size: 0.85rem;
+    color: #155724;
+    font-weight: 500;
+    background-color: transparent !important;
+}
+
+.hypoallergenic-check {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px !important;
+    background: #28a745 !important;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    position: relative;
+    padding: 0 !important;
+    right: -4px;
+}
+
+.hypoallergenic-check-icon {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
+
+.breed-info h1 {
+    margin: 0 0 20px 0;
+    color: #333;
+    font-size: 2.5rem;
+}
+
+.breed-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 30px;
+    display: block !important;
+    width: 100%;
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+    min-height: auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.breed-description-paragraph {
+    margin: 0 0 16px 0;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+    display: block !important;
+    width: 100%;
+    white-space: normal;
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+    visibility: visible !important;
+}
+
+.breed-description-paragraph:last-child {
+    margin-bottom: 0;
+}
+
+.description-subtitle {
+    margin: 20px 0 12px 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #014baa;
+    font-family: 'Circe', sans-serif;
+}
+
+.description-subtitle:first-child {
+    margin-top: 0;
+}
+
+.description-subtitle.collapsible {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    user-select: none;
+    margin: 20px 0 0 0;
+}
+
+.description-subtitle.collapsible:hover {
+    background: #e9ecef;
+}
+
+.description-subtitle.collapsible:first-child {
+    margin-top: 0;
+}
+
+.description-subtitle.collapsible .subtitle-text {
+    flex: 1;
+    padding: 0;
+    font-size: 1.3rem;
+    background: transparent;
+}
+
+.description-subtitle.collapsible .subtitle-arrow {
+    margin-left: 12px;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+    color: #014baa;
+    background: transparent;
+}
+
+.description-subtitle.collapsible .subtitle-arrow.expanded {
+    transform: rotate(180deg);
+}
+
+.description-section {
+    margin-bottom: 20px;
+}
+
+.description-section:last-child {
+    margin-bottom: 0;
+}
+
+.description-section-content {
+    padding: 16px 16px 0 16px;
+    animation: slideDown 0.3s ease;
+}
+
+.description-section-content .breed-description-paragraph:last-child {
+    margin-bottom: 0;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 1000px;
+    }
+}
+
+.breed-stats {
+    margin-bottom: 25px;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.stat .label {
+    font-weight: 500;
+    color: #333;
+}
+
+.stat .value {
+    color: #666;
+}
+
+.breed-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.tag.hypoallergenic {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.tag.trainability {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.breed-details-section {
+    margin-top: 50px;
+    overflow: visible;
+    max-height: none;
+    height: auto;
+}
+
+.breed-details-section h2 {
+    margin-bottom: 30px;
+    color: #333;
+    text-align: center;
+}
+
+.characteristics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(260px, 0.25fr));
+    grid-auto-rows: 1fr;
+    gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.characteristic {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.characteristic h4 {
+    margin: 8px 0 10px 0;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.characteristic p {
+    margin: 0;
+    color: #014baa;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Trainability Styles */
+.trainability {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.paw {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.3;
+    transition: opacity 0.2s ease;
+}
+
+.paw-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: 0 5px;
+}
+
+.paw.filled {
+    opacity: 1;
+}
+
+.paw.filled .paw-icon {
+    filter: brightness(0) saturate(100%) invert(27%) sepia(95%) saturate(2000%) hue-rotate(200deg) brightness(0.9);
+}
+
+.breed-short-description {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #014baa;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.breed-main-characteristics {
+    margin-bottom: 30px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.characteristic-line {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1rem;
+}
+
+.characteristic-line:first-child {
+    padding-top: 0;
+}
+
+.characteristic-line:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.char-label {
+    font-weight: 500;
+    color: #333;
+    margin-right: 8px;
+}
+
+.char-value {
+    color: #014baa;
+    font-weight: 600;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.char-value .paw-rating {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.breed-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.pros, .cons {
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.pros {
+    background: #d4edda;
+}
+
+.cons {
+    background: #f8d7da;
+}
+
+.pros h3, .cons h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.pros p, .cons p {
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.pros ul, .cons ul {
+    margin: 10px 0 0 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.pros li, .cons li {
+    margin: 8px 0;
+    padding-left: 24px;
+    position: relative;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+
+.pros h3 {
+    color: #28a745;
+}
+
+.cons h3 {
+    color: #dc3545;
+}
+
+.interesting-facts {
+    color: #333;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin: 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #014baa;
+}
+
+.breed-tabs {
+    display: flex;
+    gap: 10px;
+    margin-top: 40px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.tab-btn {
+    padding: 12px 24px;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #666;
+    transition: all 0.3s ease;
+    position: relative;
+    top: 2px;
+    font-family: 'Circe', sans-serif !important;
+}
+
+.tab-btn:hover {
+    color: #014baa;
+}
+
+.tab-btn.active {
+    color: #014baa;
+    border-bottom-color: #014baa;
+    font-weight: 600;
+}
+
+.tab-content {
+    margin-top: 30px;
+    overflow: visible;
+    max-height: none;
+    height: auto;
+}
+
+.info-tab-content {
+    padding: 20px 0;
+    overflow: visible;
+    max-height: none;
+    height: auto;
+}
+
+.gallery-tab-content {
+    padding: 20px 0;
+}
+
+.gallery-tab-content .breed-details-section {
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .breed-header {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .breed-image {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        aspect-ratio: 1;
+        margin: 0 auto;
+    }
+
+    .breed-info h1 {
+        font-size: 2rem;
+    }
+
+    .pros-cons {
+        grid-template-columns: 1fr;
+    }
+
+    .breed-tabs {
+        flex-wrap: wrap;
+    }
+
+    .tab-btn {
+        flex: 1;
+        min-width: 100px;
+    }
+
+    .breed-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}

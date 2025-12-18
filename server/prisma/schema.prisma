@@ -1,0 +1,329 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  id             Int             @id @default(autoincrement())
+  username       String          @unique
+  name           String
+  email          String          @unique
+  password       String
+  avatar         String?
+  role           String          @default("user")
+  telegram_chat_id String?
+  gender         String?
+  weight_unit    String?         @default("kg_and_g")
+
+  // Relations
+  pets           pets[]
+  breedRequests  breed_requests[]
+  articles       articles[]
+  savedArticles  saved_articles[]
+  breedChatMessages breed_chat_messages[]
+  breedChatReactions breed_chat_reactions[]
+  breedReviews   breed_reviews[]
+  breedReviewReactions breed_review_reactions[]
+}
+
+model animal_species {
+  id           Int            @id @default(autoincrement())
+  speciesname  String         @unique
+  speciesicon  String
+  description  String?
+
+  // Relations
+  breeds       animal_breeds[]
+  breedRequests  breed_requests[]
+}
+
+model animal_breeds {
+  id                 Int             @id @default(autoincrement())
+  speciesid          Int
+  breedname          String          @unique
+  short_description  String?         // Краткое описание
+  description        String
+  photo              String
+  hypoallergenicity  Boolean
+  trainability       Int?
+  weight             String
+  height             String
+  size               String
+  lifespan         String
+  countryoforigin    String
+  // Общие характеристики (для всех видов)
+  shedding           Int?            // Линька (1-5)
+  activity           Int?            // Активность (1-5)
+  friendliness       Int?            // Дружелюбность (1-5)
+  cleanliness        Int?            // Чистоплотность (1-5)
+  other_animals_attitude Int?        // Отношение к другим животным (1-5)
+  // Характеристики для кошек
+  grooming           Int?            // Потребность в уходе (1-5)
+  affection          Int?            // Ласковость (1-5)
+  fur_type           String?          // Тип шерсти: длинношерстная/короткошерстная
+  // Характеристики для собак
+  guard_qualities    Int?            // Охранные качества (1-5)
+  grooming_needs     Int?            // Потребность в вычесывании (1-5)
+  noise              Int?            // Шум (1-5)
+  // Новые поля
+  pros               String?         // Плюсы породы
+  cons               String?         // Минусы породы
+  gallery            String?         // JSON массив URL фотографий галереи
+  interesting_facts  String?         // Интересные факты
+
+  // Relations
+  species  animal_species @relation(fields: [speciesid], references: [id])
+  pets     pets[]
+  chatMessages breed_chat_messages[]
+  reviews  breed_reviews[]
+}
+
+model pets {
+  id             Int        @id @default(autoincrement())
+  ownerid        Int
+  breedid        Int
+  petname        String
+  avatar         String?
+  birthday       DateTime
+  gender         Boolean
+  currentweight  Float
+  healthnotes    String?
+  lastvaccinated DateTime?
+  lastinspected  DateTime?
+  lastvitamins   DateTime?
+  lastmedication DateTime?
+  lastparasitetreatment DateTime?
+  lastbathing    DateTime?
+  lastgrooming   DateTime?
+  lastteethcleaning DateTime?
+  lastnailtrimming DateTime?
+  createdat      DateTime
+  updatedat      DateTime
+
+  // Relations
+  owner      users         @relation(fields: [ownerid], references: [id])
+  breed      animal_breeds  @relation(fields: [breedid], references: [id])
+  reminders  reminders[]
+  logs       pet_logs[]
+}
+
+model reminder_types {
+  id      Int        @id @default(autoincrement())
+  rtname  String     @unique
+
+  // Relations
+  reminders reminders[]
+}
+
+model reminders {
+  id            Int           @id @default(autoincrement())
+  petid         Int
+  rtid          Int
+  status        String
+  addedat       DateTime
+  reminderdate  DateTime
+  notes         String
+  hidden        Boolean       @default(false)
+  // Периодичность
+  frequency_type String?      // 'once', 'daily', 'weekly', 'monthly', 'yearly', 'custom'
+  frequency_interval Int?     // Для кастомной периодичности (1-100)
+  frequency_unit String?      // Для кастомной периодичности: 'day', 'week', 'month'
+  // Время оповещения в Telegram
+  notification_type String?   // 'at_start', '1min', '5min', '10min', '15min', '30min', '1hour', '1day', 'custom'
+  notification_value Int?     // Для кастомного времени (1-60 для минут, 1-24 для часов, 1-30 для дней)
+  notification_unit String?   // Для кастомного времени: 'min', 'hour', 'day'
+  notification_sent Boolean   @default(false) // Флаг отправки уведомления
+
+  // Relations
+  pet      pets           @relation(fields: [petid], references: [id])
+  type     reminder_types  @relation(fields: [rtid], references: [id])
+}
+
+model breed_requests {
+  id                 Int      @id @default(autoincrement())
+  userid             Int
+  speciesid          Int
+  breedname          String
+  short_description  String? // Краткое описание
+  description        String
+  photo              String
+  hypoallergenicity  Boolean
+  trainability       Int?
+  weight             String
+  height             String
+  size               String
+  lifespan           String
+  countryoforigin    String
+  // Общие характеристики (для всех видов)
+  shedding           Int?            // Линька (1-5)
+  activity           Int?            // Активность (1-5)
+  friendliness       Int?            // Дружелюбность (1-5)
+  cleanliness        Int?            // Чистоплотность (1-5)
+  other_animals_attitude Int?        // Отношение к другим животным (1-5)
+  // Характеристики для кошек
+  grooming           Int?            // Потребность в уходе (1-5)
+  affection          Int?            // Ласковость (1-5)
+  fur_type           String?          // Тип шерсти: длинношерстная/короткошерстная
+  // Характеристики для собак
+  guard_qualities    Int?            // Охранные качества (1-5)
+  grooming_needs     Int?            // Потребность в вычесывании (1-5)
+  noise              Int?            // Шум (1-5)
+  // Новые поля
+  pros               String?         // Плюсы породы
+  cons               String?         // Минусы породы
+  gallery            String?         // JSON массив URL фотографий галереи
+  status             String   @default("pending")
+  createdat          DateTime @default(now())
+
+  // Relations
+  user users @relation(fields: [userid], references: [id])
+  species animal_species @relation(fields: [speciesid], references: [id])
+}
+
+model article_categories {
+  id           Int        @id @default(autoincrement())
+  categoryname String     @unique
+
+  // Relations
+  articles article_category_relations[]
+}
+
+model articles {
+  id          Int             @id @default(autoincrement())
+  authorid    Int
+  title       String
+  content     String
+  image       String?
+  createdat   DateTime
+  updatedat   DateTime
+  views       Int             @default(0)
+
+  // Relations
+  author    users             @relation(fields: [authorid], references: [id])
+  categories article_category_relations[]
+  savedBy   saved_articles[]
+}
+
+model article_category_relations {
+  id          Int             @id @default(autoincrement())
+  articleid   Int
+  categoryid  Int
+
+  // Relations
+  article  articles           @relation(fields: [articleid], references: [id], onDelete: Cascade)
+  category article_categories @relation(fields: [categoryid], references: [id], onDelete: Cascade)
+
+  @@unique([articleid, categoryid])
+  @@index([articleid])
+  @@index([categoryid])
+}
+
+model saved_articles {
+  id         Int      @id @default(autoincrement())
+  userid     Int
+  articleid  Int
+
+  // Relations
+  user     users     @relation(fields: [userid], references: [id])
+  article  articles  @relation(fields: [articleid], references: [id])
+}
+
+model pet_logs {
+  id                  Int       @id @default(autoincrement())
+  petid               Int
+  logdate             DateTime  @default(now())
+  weight              Float?
+  size                Float?     // размер (рост или обхват в см)
+  mood                Int?       // настроение 1-5
+  temperature         Float?     // температура тела
+  behavior            String?    // как себя вел питомец
+  vaccination         Boolean   @default(false)
+  vet_inspection       Boolean   @default(false)
+  parasite_treatment   Boolean   @default(false)
+  vitamins_medication  Boolean   @default(false)
+  vitamins             Boolean   @default(false)
+  medication           Boolean   @default(false)
+  bathing             Boolean   @default(false)
+  grooming            Boolean   @default(false)
+  teeth_cleaning      Boolean   @default(false)
+  nail_trimming       Boolean   @default(false)
+  notes               String?
+  createdat           DateTime  @default(now())
+
+  // Relations
+  pet pets @relation(fields: [petid], references: [id], onDelete: Cascade)
+
+  @@unique([petid, logdate])
+  @@index([petid, logdate])
+}
+
+model breed_chat_messages {
+  id              Int      @id @default(autoincrement())
+  breedid         Int
+  userid          Int
+  message         String
+  createdat       DateTime @default(now())
+  attachment_url  String?
+  attachment_name String?
+  attachment_type String?
+  attachment_size Int?
+  attachments     String?  // JSON массив вложений (до 3 файлов)
+
+  // Relations
+  breed     animal_breeds       @relation(fields: [breedid], references: [id], onDelete: Cascade)
+  user      users               @relation(fields: [userid], references: [id], onDelete: Cascade)
+  reactions breed_chat_reactions[]
+
+  @@index([breedid, createdat])
+}
+
+model breed_chat_reactions {
+  id            Int      @id @default(autoincrement())
+  messageid     Int
+  userid        Int
+  reaction      String   // URL изображения реакции или эмодзи
+  createdat     DateTime @default(now())
+
+  // Relations
+  message breed_chat_messages @relation(fields: [messageid], references: [id], onDelete: Cascade)
+  user    users               @relation(fields: [userid], references: [id], onDelete: Cascade)
+
+  @@unique([messageid, userid, reaction])
+  @@index([messageid])
+}
+
+model breed_reviews {
+  id            Int      @id @default(autoincrement())
+  breedid       Int
+  userid        Int
+  text          String
+  photos        String?  // JSON массив URL фотографий
+  createdat     DateTime @default(now())
+  updatedat     DateTime @updatedAt
+
+  // Relations
+  breed     animal_breeds       @relation(fields: [breedid], references: [id], onDelete: Cascade)
+  user      users               @relation(fields: [userid], references: [id], onDelete: Cascade)
+  reactions breed_review_reactions[]
+
+  @@index([breedid, createdat])
+}
+
+model breed_review_reactions {
+  id            Int      @id @default(autoincrement())
+  reviewid      Int
+  userid        Int
+  reaction      String   // URL изображения реакции или эмодзи
+  createdat     DateTime @default(now())
+
+  // Relations
+  review breed_reviews @relation(fields: [reviewid], references: [id], onDelete: Cascade)
+  user   users         @relation(fields: [userid], references: [id], onDelete: Cascade)
+
+  @@unique([reviewid, userid, reaction])
+  @@index([reviewid])
+}

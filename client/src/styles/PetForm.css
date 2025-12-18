@@ -1,0 +1,235 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 10px;
+    padding: 0;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #333;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.pet-form {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #014baa;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.gender-radio-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.radio-group .gender-radio-label {
+    display: flex;
+    align-items: center !important;
+    gap: 8px;
+    font-weight: normal;
+    cursor: pointer;
+    padding: 8px 12px;
+    margin-bottom: 0 !important;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.gender-radio-label:hover {
+    border-color: #014baa;
+}
+
+.gender-radio-label input[type="radio"] {
+    display: none;
+}
+
+.gender-icon {
+    width: 20px;
+    height: 20px;
+    filter: grayscale(100%) opacity(0.5);
+    transition: all 0.3s ease;
+}
+
+.gender-radio-label.selected {
+    border-color: #014baa;
+    background-color: rgba(1, 75, 170, 0.05);
+}
+
+.gender-radio-label.selected .gender-icon {
+    filter: none;
+    opacity: 1;
+}
+
+.gender-radio-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+/* Avatar Upload Styles */
+.avatar-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.avatar-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+    border: none !important;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.avatar-image {
+    position: relative;
+    display: inline-block;
+    
+}
+
+.avatar-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #014baa;
+}
+
+.remove-avatar {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-placeholder {
+    text-align: center;
+    color: #666;
+    background-color: transparent !important;
+}
+
+.avatar-placeholder span {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.avatar-placeholder p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Form Section Styles */
+.form-section {
+    margin: 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #014baa;
+}
+
+.form-section h3 {
+    margin: 0 0 20px 0;
+    color: #333;
+    font-size: 1.2rem;
+}

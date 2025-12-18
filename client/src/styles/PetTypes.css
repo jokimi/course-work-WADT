@@ -1,0 +1,105 @@
+.pet-types {
+    padding: 40px 0;
+}
+
+.species-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.species-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    transition: all 0.3s ease;
+}
+
+.species-card:hover {
+    transform: none;
+}
+
+.species-icon-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.species-card:hover .species-icon-circle {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    background: #014baa;
+    transform: scale(1.1);
+}
+
+.species-icon-circle img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+/* Для питомцев - аватар как фон */
+.pets-grid .species-icon-circle {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.species-icon-circle span {
+    font-size: 5rem;
+}
+
+.species-name {
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 5px;
+}
+
+@media (max-width: 1200px) {
+    .species-grid {
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 900px) {
+    .species-grid {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 600px) {
+    .species-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .species-icon-circle {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .species-icon-circle img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .species-icon-circle span {
+        font-size: 4rem;
+    }
+}

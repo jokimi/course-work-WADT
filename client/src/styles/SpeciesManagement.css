@@ -1,0 +1,200 @@
+.species-management {
+    padding: 20px;
+}
+
+.section-header {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.section-header h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.species-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.species-list .species-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    height: fit-content;
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.species-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.species-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.species-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.species-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.species-details h3 {
+    margin: 0;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.species-details p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.species-actions-overlay {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    gap: 8px;
+    flex-direction: row;
+    height: fit-content;
+    right: 20px;
+}
+
+.btn-icon-overlay {
+    background: #014baa !important;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+}
+
+.btn-icon-overlay img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Белая иконка */
+    transition: filter 0.2s ease;
+}
+
+.btn-icon-overlay:hover {
+    background: white !important;
+    transform: scale(1.00) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-icon-overlay:hover img {
+    filter: brightness(0) invert(0); /* Черная иконка при наведении */
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.species-form {
+    padding: 20px;
+}
+
+/* Avatar Upload Styles */
+.avatar-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.avatar-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.avatar-image {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.avatar-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.remove-avatar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.avatar-placeholder {
+    text-align: center;
+    color: #666;
+}
+
+.avatar-placeholder span {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.avatar-placeholder p {
+    margin: 0;
+    font-size: 0.9rem;
+}
